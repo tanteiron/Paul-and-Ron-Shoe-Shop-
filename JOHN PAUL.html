@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PAUL and RON SHOE SHOP</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+
+    <div class="navbar">
+
+        <button class="logo" id="logoBtn">
+            PAUL and RON SHOE SHOP<span>.</span>
+        </button>
+
+        <nav class="navigation">
+
+            <button class="nav-link active" data-page="home">
+                Home
+            </button>
+
+            <button class="nav-link" data-page="shop">
+                Shop
+            </button>
+
+            <button class="nav-link" data-page="new">
+                New Arrivals
+            </button>
+
+            <button class="nav-link" data-page="about">
+                About
+            </button>
+
+        </nav>
+
+        <div class="nav-icons">
+
+            <button class="icon-btn" id="searchButton">
+                🔍
+            </button>
+
+            <button class="icon-btn cart-icon" id="cartButton">
+                🛒
+                <span id="cartCount">0</span>
+            </button>
+
+            <button class="icon-btn mobile-menu-btn" id="menuButton">
+                ☰
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="mobile-navigation" id="mobileNavigation">
+
+        <button data-page="home">Home</button>
+        <button data-page="shop">Shop</button>
+        <button data-page="new">New Arrivals</button>
+        <button data-page="about">About</button>
+
+    </div>
+
+</header>
+
+
+<!-- ================= SEARCH ================= -->
+
+<div class="search-box" id="searchBox">
+
+    <div class="search-inner">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search shoes..."
+        >
+
+        <button id="closeSearch" class="close-button">
+            ×
+        </button>
+
+    </div>
+
+    <div id="searchResults" class="search-results"></div>
+
+</div>
+
+
+<!-- ================= MAIN ================= -->
+
+<main>
+
+    <!-- ================= HOME ================= -->
+
+    <section class="page home-page active" id="homePage">
+
+        <div class="hero">
+
+            <div class="hero-content">
+
+                <p class="small-title">
+                    PREMIUM FOOTWEAR
+                </p>
+
+                <h1>
+                    MOVE BETTER.
+                    <span>GO FURTHER.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Discover premium footwear designed
+                    for comfort, performance and everyday style.
+                </p>
+
+                <button class="main-button" id="homeShopButton">
+                    Shop Now
+                </button>
+
+            </div>
+
+            <div class="hero-image">
+
+                <img
+                    src="https://wallpaperbat.com/img/12106149-sneaker-wallpaper.jpg"
+                    alt="Running shoe"
+                >
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SHOP ================= -->
+
+    <section class="page" id="shopPage">
+
+        <div class="page-content">
+
+            <div class="page-title">
+
+                <p class="small-title">
+                    OUR COLLECTION
+                </p>
+
+                <h2>
+                    All Shoes
+                </h2>
+
+                <p>
+                    Browse our complete footwear collection.
+                </p>
+
+            </div>
+
+            <div class="product-grid" id="allProducts"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= NEW ARRIVALS ================= -->
+
+    <section class="page" id="newPage">
+
+        <div class="page-content">
+
+            <div class="page-title">
+
+                <p class="small-title">
+                    JUST DROPPED
+                </p>
+
+                <h2>
+                    New Arrivals
+                </h2>
+
+                <p>
+                    Check out our latest footwear releases.
+                </p>
+
+            </div>
+
+            <div class="product-grid" id="newProducts"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section class="page" id="aboutPage">
+
+        <div class="about-container">
+
+            <p class="small-title">
+                ABOUT US
+            </p>
+
+            <h2>
+                Built for people
+                who keep moving.
+            </h2>
+
+            <p class="about-intro">
+                PAUL and RON SHOE SHOP creates quality footwear
+                that combines comfort, performance and modern design.
+            </p>
+
+            <div class="about-grid">
+
+                <div class="about-card">
+
+                    <h3>
+                        Our Story
+                    </h3>
+
+                    <p>
+                        We were created with one simple goal:
+                        to provide quality footwear that feels
+                        as good as it looks.
+                    </p>
+
+                </div>
+
+                <div class="about-card">
+
+                    <h3>
+                        Our Mission
+                    </h3>
+
+                    <p>
+                        We provide footwear for everyday movement,
+                        from daily activities to weekend adventures.
+                    </p>
+
+                </div>
+
+                <div class="about-card">
+
+                    <h3>
+                        Our Values
+                    </h3>
+
+                    <p>
+                        Quality, comfort, innovation and simplicity
+                        are at the heart of everything we create.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- ================= CART ================= -->
+
+<div class="cart-overlay" id="cartOverlay"></div>
+
+<aside class="cart-sidebar" id="cartSidebar">
+
+    <div class="cart-header">
+
+        <h2>
+            Your Cart
+        </h2>
+
+        <button id="closeCart" class="close-cart">
+            ×
+        </button>
+
+    </div>
+
+    <div class="cart-items" id="cartItems"></div>
+
+    <div class="cart-bottom">
+
+        <div class="total-row">
+
+            <span>
+                Total
+            </span>
+
+            <strong id="cartTotal">
+                ₱0.00
+            </strong>
+
+        </div>
+
+        <button class="checkout-button" id="checkoutButton">
+            Checkout
+        </button>
+
+    </div>
+
+</aside>
+
+
+<!-- ================= CHECKOUT MODAL ================= -->
+
+<div class="checkout-overlay" id="checkoutOverlay">
+
+    <div class="checkout-modal">
+
+        <div class="checkout-header">
+
+            <h2>
+                Checkout
+            </h2>
+
+            <button id="closeCheckout" class="close-checkout">
+                ×
+            </button>
+
+        </div>
+
+        <div class="checkout-content">
+
+            <div class="checkout-summary">
+
+                <h3>
+                    Order Summary
+                </h3>
+
+                <div id="checkoutItems"></div>
+
+                <div class="checkout-total">
+                    <span>Total:</span>
+                    <strong id="checkoutTotal">
+                        ₱0.00
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <!-- CUSTOMER INFORMATION -->
+
+            <form id="checkoutForm">
+
+                <h3>
+                    Delivery Information
+                </h3>
+
+                <div class="form-group">
+
+                    <label for="customerName">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="customerName"
+                        placeholder="Enter your full name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="customerPhone">
+                        Phone Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="customerPhone"
+                        placeholder="09XXXXXXXXX"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="customerAddress">
+                        Delivery Address
+                    </label>
+
+                    <textarea
+                        id="customerAddress"
+                        placeholder="Enter your complete address"
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <!-- PAYMENT METHODS -->
+
+                <h3>
+                    Payment Method
+                </h3>
+
+                <div class="payment-methods">
+
+                    <label class="payment-option">
+
+                        <input
+                            type="radio"
+                            name="payment"
+                            value="gcash"
+                            required
+                        >
+
+                        <div>
+                            <strong>💙 GCash</strong>
+                            <small>Pay using GCash</small>
+                        </div>
+
+                    </label>
+
+
+                    <label class="payment-option">
+
+                        <input
+                            type="radio"
+                            name="payment"
+                            value="paymaya"
+                        >
+
+                        <div>
+                            <strong>💜 PayMaya</strong>
+                            <small>Pay using PayMaya</small>
+                        </div>
+
+                    </label>
+
+
+                    <label class="payment-option">
+
+                        <input
+                            type="radio"
+                            name="payment"
+                            value="cod"
+                        >
+
+                        <div>
+                            <strong>💵 Cash on Delivery</strong>
+                            <small>Pay when your order arrives</small>
+                        </div>
+
+                    </label>
+
+                </div>
+
+
+                <!-- GCASH -->
+
+                <div
+                    class="payment-details"
+                    id="gcashDetails"
+                >
+
+                    <h4>
+                        GCash Payment
+                    </h4>
+
+                    <p>
+                        Enter the GCash number that you will use
+                        for payment.
+                    </p>
+
+                    <input
+                        type="tel"
+                        id="gcashNumber"
+                        placeholder="GCash Number"
+                    >
+
+                </div>
+
+
+                <!-- PAYMAYA -->
+
+                <div
+                    class="payment-details"
+                    id="paymayaDetails"
+                >
+
+                    <h4>
+                        PayMaya Payment
+                    </h4>
+
+                    <p>
+                        Enter the PayMaya number that you will use
+                        for payment.
+                    </p>
+
+                    <input
+                        type="tel"
+                        id="paymayaNumber"
+                        placeholder="PayMaya Number"
+                    >
+
+                </div>
+
+
+                <!-- COD -->
+
+                <div
+                    class="payment-details"
+                    id="codDetails"
+                >
+
+                    <h4>
+                        Cash on Delivery
+                    </h4>
+
+                    <p>
+                        You will pay the delivery rider when
+                        your order arrives.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="place-order-button"
+                >
+                    Place Order
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= SUCCESS MODAL ================= -->
+
+<div class="success-overlay" id="successOverlay">
+
+    <div class="success-modal">
+
+        <div class="success-icon">
+            ✓
+        </div>
+
+        <h2>
+            Order Placed!
+        </h2>
+
+        <p id="successMessage">
+            Thank you for your order.
+        </p>
+
+        <button id="continueShopping">
+            Continue Shopping
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- ================= TOAST ================= -->
+
+<div class="toast" id="toast">
+    Added to cart
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-inner">
+
+        <div>
+
+            <button class="footer-logo" id="footerLogo">
+                PAUL and RON SHOE SHOP<span>.</span>
+            </button>
+
+            <p>
+                Move better. Go further.
+            </p>
+
+        
+
+    </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
